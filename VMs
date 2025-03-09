@@ -1,0 +1,20 @@
+# Variáveis para facilitar a reutilização
+resourceGroup="MeuGrupoDeRecursos"
+location="eastus"
+vmName="MinhaVM"
+image="UbuntuLTS"
+size="Standard_DS2_v2" # Tipo de VM
+
+# Criação do grupo de recursos
+az group create --name $resourceGroup --location $location
+
+# Criação da máquina virtual
+az vm create \
+  --resource-group $resourceGroup \
+  --name $vmName \
+  --image $image \
+  --size $size \
+  --admin-username azureuser \
+  --generate-ssh-keys \
+  --public-ip-sku Standard \
+  --output json
