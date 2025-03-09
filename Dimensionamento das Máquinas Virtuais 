@@ -1,0 +1,11 @@
+# Criar um VM Scale Set
+az vmss create \
+  --resource-group $resourceGroup \
+  --name MeuVMSS \
+  --image $image \
+  --upgrade-policy-mode automatic \
+  --vm-sku Standard_DS2_v2 \
+  --instance-count 3 \
+  --enable-autoscale \
+  --min-count 2 \
+  --max-count 10
