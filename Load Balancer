@@ -1,0 +1,8 @@
+# Criar o Load Balancer
+az network lb create \
+  --resource-group $resourceGroup \
+  --name MeuLoadBalancer \
+  --sku Standard \
+  --frontend-ip-name MeuFrontEnd \
+  --backend-pool-name MeuBackendPool \
+  --location $location
